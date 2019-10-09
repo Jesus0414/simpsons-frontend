@@ -1,9 +1,26 @@
-const apiUrl = '';
+const Container = document.getElementById('container');
+const apiUrl = 'https://localhost:5001/simpsons/Character';
 
-const apiResponse = async url=>{
+const getsimpsonsData = async() =>{
+     const response = await fetch(apiUrl);
+     console.log(response);
+     const simpsonsData = await response.json();
+     console.log(simpsonsData);
+     //const { firstname, lastname, age } = simpsonsData;
+     simpsonsData.forEach(element => {
+          const { firstName, lastName, age } = element;
+          Container.innerHTML  += `<div id="simpson-name">${firstName}</div>
+          <div id="simpson-last">${lastName}</div>
+          <div id="simpson-age">${age}</div>`
+     });
+     
+};
+
+/*const apiResponse = async url=>{
      const response = await fetch(url);
      const data = response.json;
      console.log(data);
 }
 
-apiResponse();
+apiResponse(url);*/
+getsimpsonsData();
