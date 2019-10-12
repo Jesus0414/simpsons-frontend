@@ -8,10 +8,11 @@ const getsimpsonsData = async() =>{
      console.log(simpsonsData);
      //const { firstname, lastname, age } = simpsonsData;
      simpsonsData.forEach(element => {
-          const { firstName, lastName, age } = element;
+          const { firstName, lastName, age, description } = element;
           Container.innerHTML  += `<div id="simpson-name">${firstName}</div>
           <div id="simpson-last">${lastName}</div>
-          <div id="simpson-age">${age}</div>`
+          <div id="simpson-age">${age}</div>
+          <div id="simpson-description">${description}</div>`
      });
      
 };
