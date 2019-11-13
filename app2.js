@@ -1,3 +1,4 @@
+let photoTexture;
 const characterData = {
     firstName : document.getElementById('simpson-name'),
     lastName : document.getElementById('simpson-last'),
@@ -19,7 +20,7 @@ const getnameData = async id =>{
     characterData.age.innerText = age;
     characterData.description.innerText = description;
     characterData.photo.src = photo;
-
+    photoTexture = photo;
     
 }
 
